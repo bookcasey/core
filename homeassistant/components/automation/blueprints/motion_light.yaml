@@ -34,9 +34,11 @@ max_exceeded: silent
 trigger:
   platform: state
   entity_id: !input motion_entity
-  from: "off"
+  from: 
+    - "off"
+    - "unavailable"
   to: "on"
-
+  
 action:
   - alias: "Turn on the light"
     service: light.turn_on
